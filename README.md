@@ -16,6 +16,8 @@ The site hosts a selection of fast, lightweight games that run directly in the b
 * Deltarune-inspired content
 * Bad Time Simulator
 * Sans Fight
+* Five Nights at Epstens (parody game)
+* Epstense’s Basic (parody game)
 
 ## Features
 
@@ -28,12 +30,14 @@ The site hosts a selection of fast, lightweight games that run directly in the b
 ## Installation
 
 ```bash
-git clone https://github.com/artinRahm/lunar-unbloeked
+git clone https://github.com/your-username/your-repo-name.git
 ```
 
 Open `index.html` in your browser to run the site.
 
 ## Disclaimer
+
+Some games on this site are parody or joke-based content. I do not support or promote any real people, actions, or themes that may be referenced in these games. All content is included strictly for entertainment purposes.
 
 This project is not affiliated with the original creators of any referenced games. All rights belong to their respective owners.
 
