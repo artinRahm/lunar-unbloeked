@@ -18,6 +18,9 @@ The site hosts a selection of fast, lightweight games that run directly in the b
 * Sans Fight
 * Five Nights at Epstens (parody game)
 * Epstense’s Basic (parody game)
+* cluter rush
+* halflife 1
+* silksong (soon)
 
 ## Features
 
