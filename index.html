@@ -1233,6 +1233,213 @@
       width: 0%;
       transition: width 0.3s ease;
     }
+    /* ── MUSIC PAGE ── */
+    #page-music {
+      padding-top: 80px;
+      align-items: stretch;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    #page-music .inner-page-hero h1 span {
+      background: linear-gradient(135deg, #ff5500, #ffaa00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .music-section { padding: 0 40px 40px; }
+
+    .music-search-row {
+      display: flex;
+      gap: 0;
+      margin-bottom: 24px;
+    }
+
+    .music-search-row input {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-right: none;
+      border-radius: 4px 0 0 4px;
+      padding: 12px 18px;
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .music-search-row input:focus { border-color: rgba(255,85,0,0.5); }
+    .music-search-row input::placeholder { color: var(--muted); }
+
+    .music-search-row button {
+      background: #ff5500;
+      border: 1px solid #ff5500;
+      border-radius: 0 4px 4px 0;
+      color: #fff;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 12px 20px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .music-search-row button:hover { background: #cc4400; }
+
+    /* Now playing bar */
+    .now-playing-bar {
+      display: none;
+      background: rgba(255,85,0,0.07);
+      border: 1px solid rgba(255,85,0,0.2);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .now-playing-bar.visible { display: flex; }
+
+    .np-art {
+      width: 48px; height: 48px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--surface);
+    }
+
+    .np-info { flex: 1; min-width: 0; }
+
+    .np-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 2px;
+    }
+
+    .np-artist {
+      font-size: 11px;
+      color: rgba(255,85,0,0.9);
+    }
+
+    .np-controls { display: flex; gap: 6px; flex-shrink: 0; }
+
+    .np-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+
+    .np-btn:hover { background: rgba(255,85,0,0.15); border-color: rgba(255,85,0,0.3); }
+    .np-btn.playing { color: #ff5500; }
+
+    /* Hidden SC widget */
+    #scWidget { display: none; }
+
+    /* Search results */
+    .sc-results { display: flex; flex-direction: column; gap: 8px; }
+
+    .sc-track {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+      animation: cardIn 0.3s ease both;
+    }
+
+    .sc-track:hover {
+      border-color: rgba(255,85,0,0.4);
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .sc-track.active-track {
+      border-color: rgba(255,85,0,0.6);
+      background: rgba(255,85,0,0.07);
+    }
+
+    .sc-art {
+      width: 48px; height: 48px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--surface);
+    }
+
+    .sc-info { flex: 1; min-width: 0; }
+
+    .sc-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 3px;
+    }
+
+    .sc-artist {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .sc-duration {
+      font-size: 11px;
+      color: var(--muted);
+      flex-shrink: 0;
+      letter-spacing: 0.5px;
+    }
+
+    .sc-play-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      color: var(--muted);
+      width: 24px;
+      text-align: center;
+      transition: color 0.15s;
+    }
+
+    .sc-track:hover .sc-play-icon { color: #ff5500; }
+    .sc-track.active-track .sc-play-icon { color: #ff5500; }
+
+    .sc-empty {
+      text-align: center;
+      padding: 48px 20px;
+      color: var(--muted);
+      font-size: 13px;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+    }
+
+    .sc-empty .sc-empty-icon { font-size: 40px; margin-bottom: 12px; }
+
+    .sc-loading {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
@@ -1260,7 +1467,7 @@
 
 <!-- HOME / New Tab Page -->
 <div class="page active" id="page-home">
-  <div class="logo">LUNAR </div>
+  <div class="logo">LUNAR UNBLOKED</div>
   <div class="splash" id="splash" onclick="cycleSplash()">press to reveal a secret</div>
   <div class="home-search">
     <input type="text" id="homeSearch" placeholder="search or enter a URL..." onkeydown="handleHomeSearch(event)">
@@ -1332,7 +1539,7 @@
 
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
       <div class="social-label" style="margin-bottom:0;">👾 Developers</div>
-      <button onclick="openDevModal()" style="background:var(--accent);border:none;color:#fff;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:7px 16px;border-radius:6px;cursor:pointer;letter-spacing:1px;transition:filter 0.2s;" onmouseover="this.style.filter='brightness(1.2)'" onmouseout="this.style.filter=''">+ ADD DEV</button>
+      <button onclick="openDevModal()" style="background:var(--accent);border:none;color:#fff;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:7px 16px;border-radius:6px;cursor:pointer;letter-spacing:1px;transition:filter 0.2s;" onmouseover="this.style.filter='brightness(1.2)'" onmouseout="this.style.filter=''"></button>
     </div>
     <div class="dev-grid" id="devGrid"></div>
 
@@ -1351,12 +1558,141 @@
 
 </div>
 
+<div class="dev-modal-actions">
+  <button class="dev-modal-btn save" onclick="saveDevModal()">✓ SAVE</button>
+  <button class="dev-modal-btn cancel" onclick="closeDevModal()">✕ CANCEL</button>
+</div>
+</div>
+</div>
+
+<!-- MUSIC PAGE -->
+<div class="page" id="page-music">
+  <div class="inner-page-hero">
+    <h1>THE<br><span>MUSIC.</span></h1>
+    <p>Search SoundCloud and play anything. Music persists while you browse.</p>
+  </div>
+  <div class="music-section">
+
+    <!-- Now Playing Bar -->
+    <div class="now-playing-bar" id="nowPlayingBar">
+      <img class="np-art" id="npArt" src="" alt="">
+      <div class="np-info">
+        <div class="np-title" id="npTitle">—</div>
+        <div class="np-artist" id="npArtist">—</div>
+      </div>
+      <div class="np-controls">
+        <button class="np-btn" onclick="scPrev()" title="Previous">⏮</button>
+        <button class="np-btn" id="npPlayBtn" onclick="scTogglePlay()" title="Play/Pause">⏸</button>
+        <button class="np-btn" onclick="scNext()" title="Next">⏭</button>
+      </div>
+    </div>
+
+    <!-- Hidden SoundCloud Widget -->
+    <iframe id="scWidget" src="" allow="autoplay"></iframe>
+
+    <!-- Search -->
+    <div class="music-search-row">
+      <input type="text" id="scSearch" placeholder="Search SoundCloud — artist, song, genre..." onkeydown="if(event.key==='Enter')scDoSearch()">
+      <button onclick="scDoSearch()">🔍 SEARCH</button>
+    </div>
+
+    <div id="scResults">
+      <div class="sc-empty">
+        <div class="sc-empty-icon">🎵</div>
+        Search for a song or artist above to start listening.
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- DOCS PAGE -->
 <div class="page" id="page-docs">
   <div class="inner-page-hero">
-    <h1>MIA<br><span>PROJECT.</span></h1>
-    <p>sorry :(</p>
+    <h1>THE<br><span>PROJECT.</span></h1>
+    <p>Everything you need to know about VaultPlay.</p>
+  </div>
+  <div class="docs-body">
 
+    <div class="docs-block">
+      <h3>What is Lunar Unbloked? <span class="docs-version">v1.0</span></h3>
+      <p>
+        <strong>Lunar Unbloked</strong> is a personal browser homepage built to feel like its own operating system.
+        It runs entirely in a single <code>.html</code> file — no servers, no installs, no accounts.
+        Drop it in a folder with your game files, open it in any browser, and you have an instant
+        local arcade + dashboard with a built-in proxy.
+      </p>
+    </div>
+
+    <div class="docs-block">
+      <h3>How to Add Games</h3>
+      <p>
+        Place your <code>.html</code> game files in the <strong>same folder</strong> as <code>lunar_unbloked.html</code>.
+        Then open the file in a text editor and find the <code>const GAMES = [...]</code> array near the bottom of the script.
+        Add a new entry like this:
+      </p>
+      <br>
+      <p>
+        <code>{ name: "My Game", file: "mygame.html", tag: "arcade", emoji: "🎯", bg: "linear-gradient(135deg,#f00,#00f)" }</code>
+      </p>
+      <br>
+      <p>
+        Optionally add an <code>image: "url"</code> field to show a thumbnail instead of the emoji.
+        Available tags: <strong>arcade</strong>, <strong>puzzle</strong>, <strong>action</strong>, <strong>strategy</strong>, <strong>word</strong>.
+      </p>
+    </div>
+
+    <div class="docs-block">
+      <h3>Pages &amp; Navigation</h3>
+      <p>VaultPlay has a tab system at the top and a dock at the bottom. Current pages:</p>
+      <div class="docs-tag-row">
+        <span class="docs-tag">⊕ Home / New Tab</span>
+        <span class="docs-tag">🎮 Games</span>
+        <span class="docs-tag">👥 Social</span>
+        <span class="docs-tag">📄 Docs</span>
+      </div>
+      <br>
+      <p>
+        Tabs open automatically when you navigate. You can add more tabs with the <code>+</code> button
+        in the browser bar, and close them with the <code>×</code> on each tab.
+      </p>
+    </div>
+
+    <div class="docs-block">
+      <h3>Social / YouTube</h3>
+      <p>
+        The <strong>Social</strong> page lets you save YouTube channel links. Type a channel URL or name,
+        hit <strong>ADD</strong>, and it gets saved to <code>localStorage</code> — so it persists across
+        sessions. Click any saved channel card to open it in a new tab. Delete channels with the
+        <code>×</code> button on each card.
+      </p>
+    </div>
+
+    <div class="docs-block">
+      <h3>Splash Texts</h3>
+      <p>
+        On the home page, the subtitle text below <strong>VAULTPLAY</strong> is a randomly picked
+        splash message. <strong>Click it</strong> to cycle through all the messages. There are 15 built‑in
+        splashes — add your own by editing the <code>SPLASHES</code> array in the script.
+      </p>
+    </div>
+
+    <div class="docs-block">
+      <h3>Tech Stack</h3>
+      <p>
+        Pure <strong>HTML + CSS + Vanilla JS</strong>. No frameworks, no build step, no dependencies.
+        The particle background uses an embedded version of <strong>particles.js</strong> by Vincent Garreau.
+        Fonts are loaded from Google Fonts (<strong>Space Mono</strong> + <strong>Syne</strong>).
+        Everything else is hand-written and self-contained in one file.
+      </p>
+      <div class="docs-tag-row">
+        <span class="docs-tag">HTML5</span>
+        <span class="docs-tag">CSS3</span>
+        <span class="docs-tag">Vanilla JS</span>
+        <span class="docs-tag">particles.js</span>
+        <span class="docs-tag">localStorage</span>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -1451,7 +1787,7 @@
   <div class="dock-btn active" onclick="switchPage('home')" title="New Tab">⊕</div>
   <div class="dock-btn" onclick="switchPage('games')" title="Games">🎮</div>
   <div class="dock-btn" title="Cloud">☁️</div>
-  <div class="dock-btn" title="Video">📹</div>
+  <div class="dock-btn" onclick="switchPage('music')" title="Music">🎵</div>
   <div class="dock-btn" onclick="openDownloadModal()" title="Files">🗂️</div>
   <div class="dock-btn" onclick="switchPage('social')" title="Social">👥</div>
   <div class="dock-btn" onclick="switchPage('docs')" title="Docs">📄</div>
@@ -1661,8 +1997,6 @@
     {name: 'Nexus is on the wifi', role: 'source code for games "some"', pfp: 'https://nexus-is.onthewifi.com/storage/images/profile2.png', desc: 'artin skided some games'},
     {name: 'bog', role: 'source code for games', pfp: 'https://bog.lat/assets/bog.webp', desc: 'artin skided some games '},
     {name: 'gn math', role: 'source code for games', pfp: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAkFBMVEX7JlL5JlH////+//3/J1T4QGL/4+v9JFH8/////f7+PmP7//36KE/6Jlj/rsD///r4eJH/+Pz6K1X/+ff8OF7/Mlv5e5P75uv/J1r/pbr59fT/7PL2Jlf9KFb3Ik7/RGf2cIv6gJf/8fT5Hkj74/D9Pmn/scT35+r0//r0NWDwKFb9d5L/M1//9v7/ucn98fPUPlMHAAAE8klEQVR4nO1Ya5PaOgz1I8QxYVtiAmk3a6BA98HSy///d1dSngtJDBRm+sFnGHYTK8rBluQjM+bh4eHh4eHh4eHh4eHh4eHh4eHhcQITBJwzZSZqMgA14UpxHijusjOKgV1griZgfzw9Pb08dQBv/rAGCahL7K4kwBURSH9+G8TPlAWMKea2IwKKX0mAp88yHoB8Tg1Tipmx045fTYCh8ThPtNA9EDrJV4YTAZfdGH2yKwmA51WWiIh8nDnVOhJJtoIIgEUYOe1goq4kgLFlV5mOokiI6Ax0T2erJcdwddtZitbLCZiSQJiIuO+XxSIJx0RgOXbZlQTcWVDn/3ar1HaS7hL4aTpq+0zgI5JYaCF0OOYYhHwc4pWIYYAMGkT4/J9dOkF/2wlbQtIEFxA4vLzAZ/87m82+4+f7CY5SnxPQ8nhqVzw9y3/vyeHBovchAq38f4X8fZ0uPqfTxWJ6gl8bCW8UMqsIZBIutdz8OrXEZz8XU3IG9WDOWaCGlqDK/zeJmG3SeaCstSz4AnbIRRcBkR9OLa2BIJmnmxk5fEMCgzFQ5X8G4UtTDLWW8qcGxBE3adZNIEsNPG4aa6gR4MDQEkFCwDgR6J+EKv9DIiyBABi3Y5ejh9IhvLAmQISQMA63s41utPxhBPAhAmX6SYwpfAAWxXBIogqs+kURWDQENN0oZow11jhjioO9xKgtCfABAlX+Z7EU8v09TPkSogIDowDNAIdfBNl1RiDSIZRmmoHKHiIO60Qavr+DwzhbuQjQHATBKMQ1BcYjePxr/fo6Xqfhhfbn456AJ+AJ/GsEFO5WUOt3mqTMLgVloFij+rcTlAl8nkPd0a294H4EWEEgnEncyLOPPWzk8KlVPl6/7D82SEA/gABVT2Xma9IAi89vxT5+gtf/joII3H8JUI2AR0vg5vCmY9wV2hofET/L6IEEaC3gsSVPwwQ3HRKchJhkLrhCAo8IQlJMKApBBQTKjMIERa2oVSlugZp2avEgAgHEIBIIrDHWIgEUHrqS+VWrA9s73IwfUAeIAAe1b2Ey7CiHWY/hTbXOx/WASyQgHkKgRFUP8gSXPGo3Bt19wd0JlPUgP0qQ9TN3X3BvAnU9gIJw1hV09AUPIFDUA4YlIQisqy94DAH4u8RvUrfDfcH9CVT1oLxoBrr7gvsTqOoBNjqGM1dfcHcCVT3AjoRBb+DqC+5GwHU+qCYM9ADoBTr80DvsnLDzyekcIclT7KRarVdTT7rHewn0nfuRONjvPzLs+uUsLE/JUjxHgDtZ8YKm+azqSd/4GS44HyR58ElyYbGG8ICs5GZd1If1HHpD7ONqf1U96RnvITBwPkjiQL8doGFF4JELwy9LJQMKBwVNi0BZT3rGOwgMnw/iFhBFCTatGE6VeMCIoS+6OCUAf/vGOwkMnQ9GAo/DknAEXa7BXZu84f8GT4INFY+ANQTqetI93kFg+HxQ0yYIBCzqhcCUFSow3ECR5HQmrWBuan91PekeP4PrfDCOUB/ofGThZ9iWI4XpqNiS0wsah2U96R0/xYAOKJYAb4oL8vlWuHQA3ZPH3JnPt8KhA4qTv8Xanc+3ExjSAXTDUkq78vmvCLAuHVCe+xX3sfw8iECfDihRprA7n28m0KsDSjXADUkiZz7fjB4dUC/BkkhZZz57eHh4eHh4eHh4eHh4eHh4XIn/ATeCkewbO89XAAAAAElFTkSuQmCC', desc: 'artin skided some games '},
-
-
   ];
 
   function loadDevs() {
@@ -2165,10 +2499,9 @@
     "anyone named caleb is a PEDOFILE",
     "hello",
     '<img src="https://media.tenor.com/G4DkzZO0Z2AAAAAM/nym-smash.gif"> nym hear me out im 13',
-          "🥀 wtf do ppl watch Nsfw stuff",
-'<img src="https://media.tenor.com/zRZzaNPaz0YAAAAM/nym.gif"> smashing this shi',
-          "THE SILK PORT IS REAL"
-
+    "🥀 wtf do ppl watch Nsfw stuff",
+    '<img src="https://media.tenor.com/zRZzaNPaz0YAAAAM/nym.gif"> smashing this shi',
+    "THE SILK PORT IS REAL"
   ];
 
   let splashIdx = 0;
@@ -2201,6 +2534,7 @@
   const URL_MAP = {
     home: 'lunar://new-tab',
     games: 'lunar://games',
+    music: 'lunar://music',
     social: 'lunar://social',
     docs: 'lunar://docs',
     settings: 'lunar://settings',
@@ -2251,12 +2585,13 @@
   const PAGE_META = {
     home:     { name: 'New Tab',  icon: '⚡' },
     games:    { name: 'Games',    icon: '🎮' },
+    music:    { name: 'Music',    icon: '🎵' },
     social:   { name: 'Social',   icon: '👥' },
     docs:     { name: 'Docs',     icon: '📄' },
     settings: { name: 'Settings', icon: '⚙️' },
   };
 
-  const DOCK_MAP = ['home', 'games', null, null, null, 'social', 'docs', 'settings'];
+  const DOCK_MAP = ['home', 'games', null, 'music', null, 'social', 'docs', 'settings'];
 
   function switchPage(page) {
     currentPage = page;
@@ -2488,7 +2823,6 @@
       'mario.html',
       'minecraft.html',
       'ultrakill.html',
-      'Hollow Knight_ Silksong.html',
     ];
 
     // Auto-detect local assets from SPLASHES
@@ -2579,6 +2913,133 @@
   document.getElementById('downloadModal').addEventListener('click', function(e) {
     if (e.target === this) closeDownloadModal();
   });
+
+  // ── SOUNDCLOUD PLAYER ──
+  const SC_CLIENT_ID = 'iZIs9mchVcX5lhVRyQnGQ9'; // public read-only client id
+  let scTracks = [];
+  let scCurrentIdx = -1;
+  let scWidget = null;
+  let scReady = false;
+  let scPlaying = false;
+
+  function scFormatDuration(ms) {
+    const s = Math.floor(ms / 1000);
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return m + ':' + String(sec).padStart(2,'0');
+  }
+
+  async function scDoSearch() {
+    const q = document.getElementById('scSearch').value.trim();
+    if (!q) return;
+    const results = document.getElementById('scResults');
+    results.innerHTML = `<div class="sc-loading">🔍 Searching SoundCloud...</div>`;
+
+    try {
+      const url = `https://api.soundcloud.com/tracks?q=${encodeURIComponent(q)}&client_id=${SC_CLIENT_ID}&limit=20&linked_partitioning=1`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('API error ' + res.status);
+      const data = await res.json();
+      const tracks = (data.collection || data).filter(t => t.streamable);
+
+      if (!tracks.length) {
+        results.innerHTML = `<div class="sc-empty"><div class="sc-empty-icon">🔇</div>No results found for "<strong>${q}</strong>"</div>`;
+        return;
+      }
+
+      scTracks = tracks;
+      renderScResults();
+    } catch(e) {
+      results.innerHTML = `<div class="sc-empty"><div class="sc-empty-icon">⚠️</div>Search failed: ${e.message}<br><span style="font-size:11px;opacity:0.6">SoundCloud API may be unavailable.</span></div>`;
+    }
+  }
+
+  function renderScResults() {
+    const results = document.getElementById('scResults');
+    results.innerHTML = `<div class="sc-results">${
+            scTracks.map((t, i) => `
+      <div class="sc-track ${i === scCurrentIdx ? 'active-track' : ''}" onclick="scPlay(${i})">
+        <span class="sc-play-icon">${i === scCurrentIdx && scPlaying ? '▶' : '▷'}</span>
+        <img class="sc-art" src="${t.artwork_url || 'https://via.placeholder.com/48x48/111/555?text=♪'}" onerror="this.src='https://via.placeholder.com/48x48/111/555?text=♪'" alt="">
+        <div class="sc-info">
+          <div class="sc-title">${t.title}</div>
+          <div class="sc-artist">${t.user?.username || 'Unknown'}</div>
+        </div>
+        <span class="sc-duration">${scFormatDuration(t.duration)}</span>
+      </div>
+    `).join('')
+    }</div>`;
+  }
+
+  function scPlay(idx) {
+    if (idx < 0 || idx >= scTracks.length) return;
+    scCurrentIdx = idx;
+    const track = scTracks[idx];
+
+    // Build SC widget URL
+    const widgetSrc = `https://w.soundcloud.com/player/?url=${encodeURIComponent(track.permalink_url)}&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false&color=%23ff5500`;
+    const iframe = document.getElementById('scWidget');
+    iframe.src = widgetSrc;
+    scReady = false;
+    scPlaying = true;
+
+    // Update now playing bar
+    const bar = document.getElementById('nowPlayingBar');
+    bar.classList.add('visible');
+    document.getElementById('npTitle').textContent = track.title;
+    document.getElementById('npArtist').textContent = track.user?.username || 'Unknown';
+    const art = track.artwork_url ? track.artwork_url.replace('large','t300x300') : '';
+    document.getElementById('npArt').src = art;
+    document.getElementById('npArt').style.display = art ? '' : 'none';
+    document.getElementById('npPlayBtn').textContent = '⏸';
+    document.getElementById('npPlayBtn').classList.add('playing');
+
+    // Re-render results to highlight active
+    renderScResults();
+
+    // Init SC Widget API after iframe loads
+    iframe.onload = () => {
+      if (typeof SC !== 'undefined' && SC.Widget) {
+        scWidget = SC.Widget(iframe);
+        scWidget.bind(SC.Widget.Events.FINISH, () => scNext());
+        scReady = true;
+      }
+    };
+  }
+
+  function scTogglePlay() {
+    if (!scWidget || !scReady) return;
+    if (scPlaying) {
+      scWidget.pause();
+      scPlaying = false;
+      document.getElementById('npPlayBtn').textContent = '▶';
+      document.getElementById('npPlayBtn').classList.remove('playing');
+    } else {
+      scWidget.play();
+      scPlaying = true;
+      document.getElementById('npPlayBtn').textContent = '⏸';
+      document.getElementById('npPlayBtn').classList.add('playing');
+    }
+    renderScResults();
+  }
+
+  function scNext() {
+    if (scTracks.length === 0) return;
+    scPlay((scCurrentIdx + 1) % scTracks.length);
+  }
+
+  function scPrev() {
+    if (scTracks.length === 0) return;
+    scPlay((scCurrentIdx - 1 + scTracks.length) % scTracks.length);
+  }
+
+  // Load SC Widget API script
+  (function() {
+    const s = document.createElement('script');
+    s.src = 'https://w.soundcloud.com/player/api.js';
+    s.async = true;
+    document.head.appendChild(s);
+  })();
 
   buildCategories();
   renderAll();
